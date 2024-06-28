@@ -1,0 +1,9 @@
+batch_size: 64
+height: 27
+learning_rate: 0.001
+max_text_length: 5
+model_path: /content/drive/MyDrive/train_captcha/acb/Models/acb/202312132327
+train_epochs: 2000
+train_workers: 100
+vocab: 6A0VYFKPJZQD5NUM89WLEGR4TOBX2H13I7CS
+width: 100

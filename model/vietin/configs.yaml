@@ -1,0 +1,9 @@
+batch_size: 64
+height: 24
+learning_rate: 0.001
+max_text_length: 6
+model_path: /content/drive/MyDrive/train_captcha/vietin/Models/vietin/202312311454
+train_epochs: 2000
+train_workers: 100
+vocab: "Q8631\xB624057ZE9"
+width: 192
