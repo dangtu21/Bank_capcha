@@ -33,12 +33,20 @@ import re, base64
 async def decaptcha(request: Request):
     content = await request.body()
     content = byteToStr(content)
-    base64body = regex(content + "&", "body=(.*?)&")
+    print("Content:", content)  # In nội dung nhận được
+    
+    # Sử dụng biểu thức chính quy đơn giản để trích xuất chuỗi base64
+    base64body = regex(content, "data:image/png;base64,(.*)")
+    
     if not base64body:
-        return {"msg":"no_base64"}
-    base64body = unquote(base64body)    
-    if ";base64," in base64body:        
+        return {"msg": "no_base64"}
+    
+    base64body = unquote(base64body)
+    
+    # Kiểm tra lại nội dung của base64body
+    if ";base64," in base64body:
         base64body = regex(base64body, ';base64,(.*)')
+    
     return runbase64(base64body)
 
 
